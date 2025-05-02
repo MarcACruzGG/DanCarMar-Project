@@ -1,6 +1,8 @@
 <?php
+$message_status = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "contacto@dancarmar.com";  // ← PON AQUÍ TU GMAIL
+    $to = "contacto@dancarmar.com";
     $subject = "Nuevo mensaje desde el formulario de contacto";
 
     $name = strip_tags(trim($_POST["name"]));
@@ -15,15 +17,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $headers = "From: $name <$email>";
 
-    // Intenta enviar el correo
     if (mail($to, $subject, $email_content, $headers)) {
-        echo "Mensaje enviado correctamente.";
+        $message_status = "Mensaje enviado correctamente.";
     } else {
-        echo "Error al enviar el mensaje. Intenta más tarde.";
+        $message_status = "Error al enviar el mensaje. Intenta más tarde.";
     }
-} else {
-    // Si se intenta acceder directamente al archivo sin POST
-    http_response_code(403);
-    echo "Acceso prohibido.";
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required><br>
+        <input type="email" name="email" placeholder="Correo electrónico" required><br>
+        <input type="text" name="phone" placeholder="Teléfono"><br>
+        <textarea name="message" placeholder="Tu mensaje" required></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <?php if (!empty($message_status)): ?>
+    <script>
+        alert("<?php echo $message_status; ?>");
+    </script>
+    <?php endif; ?>
+</body>
+</html>
