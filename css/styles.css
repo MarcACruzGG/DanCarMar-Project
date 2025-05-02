@@ -11377,7 +11377,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-  background-image: none; /* Remueve la imagen de fondo por defecto */
   display: inline-block; /* Asegura que los iconos se alineen correctamente en el centro del botón */
 }
 
