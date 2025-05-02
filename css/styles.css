@@ -11354,10 +11354,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 @media (min-width: 1200px) {
   .carousel-item img {
-      max-height: 400px; /* Más grande en escritorios grandes */
+      max-height: 600px; /* Más grande en escritorios grandes */
   }
   #promociones {
-      height: 550px; /* Altura más grande en escritorios grandes */
+      height: 810px; /* Altura más grande en escritorios grandes */
   }
 }
 
