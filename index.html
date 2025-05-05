@@ -381,20 +381,6 @@
                 Solicita una cotización personalizada y obtén los mejores precios en pintura y recubrimientos para tu proyecto.
             </p>
         </div>
-
-        <!-- Mostrar el mensaje dependiendo del estado -->
-        <?php if (isset($_GET['status'])): ?>
-            <?php if ($_GET['status'] == 'success'): ?>
-                <div style="text-align: center; color: green; font-weight: bold; margin-bottom: 20px;">
-                    ¡Mensaje enviado correctamente!
-                </div>
-            <?php elseif ($_GET['status'] == 'error'): ?>
-                <div style="text-align: center; color: red; font-weight: bold; margin-bottom: 20px;">
-                    Error al enviar el mensaje. Intenta más tarde.
-                </div>
-            <?php endif; ?>
-        <?php endif; ?>
-
         <form action="send.php" method="POST" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
             <div class="row">
                 <div class="col-md-6">
