@@ -1,16 +1,16 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "contacto@dancarmar.com";
-    $subject = "Nuevo mensaje desde el formulario de contacto";
+    $to = "contacto@dancarmar.com";  // Dirección de destino
+    $subject = "Nuevo mensaje desde el formulario de contacto";  // Asunto del correo
 
-    // Recoger y limpiar los datos del formulario
+    // Obtener y limpiar los datos del formulario
     $name = strip_tags(trim($_POST["name"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $phone = strip_tags(trim($_POST["phone"]));
     $service = strip_tags(trim($_POST["service"]));
     $message = strip_tags(trim($_POST["message"]));
 
-    // Contenido del correo electrónico
+    // Composición del cuerpo del correo
     $email_content = "Nombre: $name\n";
     $email_content .= "Correo: $email\n";
     $email_content .= "Teléfono: $phone\n";
@@ -19,21 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cabecera del correo
     $headers = "From: $name <$email>";
-    $headers .= "\r\nReply-To: $email";
-    $headers .= "\r\nContent-Type: text/plain; charset=UTF-8";
 
-    // Enviar el correo
+    // Enviar el correo utilizando la función mail() de PHP
     if (mail($to, $subject, $email_content, $headers)) {
-        // Redireccionar al mismo formulario con un mensaje de éxito
-        header("Location: {$_SERVER['HTTP_REFERER']}?status=success");
-        exit();
+        echo "<script>alert('¡Mensaje enviado correctamente!'); window.location.href='https://www.dancarmar.com';</script>";
     } else {
-        // Redireccionar al mismo formulario con un mensaje de error
-        header("Location: {$_SERVER['HTTP_REFERER']}?status=error");
-        exit();
+        http_response_code(500);
+        echo "<script>alert('Error al enviar el mensaje. Intenta más tarde.'); window.location.href='https://www.dancarmar.com';</script>";
     }
 } else {
-    // Si no es una petición POST
     http_response_code(403);
-    echo "Acceso prohibido.";
+    echo "<script>alert('Acceso prohibido.'); window.location.href='https://www.dancarmar.com';</script>";
 }
+?>
