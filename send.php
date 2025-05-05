@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "contacto@dancarmar.com";  // Dirección de destino
+    $to = "contacto@dancarmar.com";  // Direcci車n de destino
     $subject = "Nuevo mensaje desde el formulario de contacto";  // Asunto del correo
 
     // Obtener y limpiar los datos del formulario
@@ -10,22 +10,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = strip_tags(trim($_POST["service"]));
     $message = strip_tags(trim($_POST["message"]));
 
-    // Composición del cuerpo del correo
+    // Composici車n del cuerpo del correo
     $email_content = "Nombre: $name\n";
     $email_content .= "Correo: $email\n";
-    $email_content .= "Teléfono: $phone\n";
+    $email_content .= "Telefono: $phone\n";
     $email_content .= "Servicio: $service\n\n";
     $email_content .= "Mensaje:\n$message\n";
 
     // Cabecera del correo
     $headers = "From: $name <$email>";
 
-    // Enviar el correo utilizando la función mail() de PHP
+    // Enviar el correo utilizando la funci車n mail() de PHP
     if (mail($to, $subject, $email_content, $headers)) {
-        echo "<script>alert('¡Mensaje enviado correctamente!'); window.location.href='https://www.dancarmar.com';</script>";
+        echo "<script>alert('Mensaje enviado correctamente'); window.location.href='https://www.dancarmar.com';</script>";
     } else {
         http_response_code(500);
-        echo "<script>alert('Error al enviar el mensaje. Intenta más tarde.'); window.location.href='https://www.dancarmar.com';</script>";
+        echo "<script>alert('Error al enviar el mensaje. Intenta m芍s tarde.'); window.location.href='https://www.dancarmar.com';</script>";
     }
 } else {
     http_response_code(403);
