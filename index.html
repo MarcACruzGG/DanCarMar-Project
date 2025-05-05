@@ -373,57 +373,56 @@
             </div>
         </section>
         <!-- Contact-->
-     <section class="page-section" id="contact" style="background-color: #f8f9fa; padding: 60px 0;">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h1 style="font-size: 2.5rem; color: #fff; font-weight: 700; margin-bottom: 20px;">COTIZA TU MATERIAL</h1>
-            <p style="font-size: 1.1rem; color: #fff; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                Solicita una cotización personalizada y obtén los mejores precios en pintura y recubrimientos para tu proyecto.
-            </p>
-        </div>
-        <form action="send.php" method="POST" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 style="font-size: 1.3rem; color: #333; border-bottom: 2px solid #dbe060; padding-bottom: 8px; margin-bottom: 25px;">Contactanos</h3>
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <input type="text" class="form-control" name="name" placeholder="Escribe tu nombre *" required 
-                            style="border-radius: 0; border-left: 3px solid #dbe060; padding: 12px 15px; height: 46px;">
+        <section class="page-section" id="contact" style="background-color: #f8f9fa; padding: 60px 0;">
+            <div class="container">
+              <div class="text-center mb-5">
+                <h1 class="fw-bold" style="font-size: 2.5rem; color: #fff;">COTIZA TU MATERIAL</h1>
+                <p class="mx-auto" style="font-size: 1.1rem; color: #fff; max-width: 600px; line-height: 1.6;">
+                  Solicita una cotización personalizada y obtén los mejores precios en pintura y recubrimientos para tu proyecto.
+                </p>
+              </div>
+          
+              <form action="send.php" method="POST" class="mx-auto bg-white p-4 shadow" style="max-width: 800px;">
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <h3 class="border-bottom pb-2 mb-4" style="font-size: 1.3rem; color: #333; border-color: #dbe060;">Contáctanos</h3>
+          
+                    <div class="form-group mb-3">
+                      <input type="text" class="form-control form-control-lg border-start border-3 border-warning" name="name" placeholder="Escribe tu nombre *" required>
                     </div>
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <input type="email" class="form-control" name="email" placeholder="Escribe tu correo *" required 
-                            style="border-radius: 0; border-left: 3px solid #dbe060; padding: 12px 15px; height: 46px;">
+                    <div class="form-group mb-3">
+                      <input type="email" class="form-control form-control-lg border-start border-3 border-warning" name="email" placeholder="Escribe tu correo *" required>
                     </div>
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <input type="tel" class="form-control" name="phone" placeholder="Escribe tu numero celular *" required 
-                            style="border-radius: 0; border-left: 3px solid #dbe060; padding: 12px 15px; height: 46px;">
+                    <div class="form-group mb-3">
+                      <input type="tel" class="form-control form-control-lg border-start border-3 border-warning" name="phone" placeholder="Escribe tu número celular *" required>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <h3 style="font-size: 1.3rem; color: #333; border-bottom: 2px solid #dbe060; padding-bottom: 8px; margin-bottom: 25px;">Como te podemos ayudar</h3>
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <select class="form-control" name="service" required 
-                                style="border-radius: 0; border-left: 3px solid #dbe060; padding: 12px 15px; height: 46px; appearance: none; background: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center; background-color: white;">
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="Dudas de Aplicación">Dudas de Aplicación</option>
-                            <option value="Cotizar Material">Cotizar Material</option>
-                        </select>
+                  </div>
+          
+                  <div class="col-12 col-md-6">
+                    <h3 class="border-bottom pb-2 mb-4" style="font-size: 1.3rem; color: #333; border-color: #dbe060;">¿Cómo te podemos ayudar?</h3>
+          
+                    <div class="form-group mb-3">
+                      <select class="form-select form-select-lg border-start border-3 border-warning" name="service" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Dudas de Aplicación">Dudas de Aplicación</option>
+                        <option value="Cotizar Material">Cotizar Material</option>
+                      </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="message" placeholder="Describe tu proyecto aquí..." 
-                                style="border-radius: 0; border-left: 3px solid #dbe060; min-height: 180px; resize: vertical; padding: 12px 15px;"></textarea>
+                      <textarea class="form-control border-start border-3 border-warning" name="message" rows="6" placeholder="Describe tu proyecto aquí..."></textarea>
                     </div>
+                  </div>
                 </div>
+          
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-lg" style="background-color: #dbe060; color: #333; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Contáctanos
+                  </button>
+                </div>
+              </form>
             </div>
-            
-            <div class="text-center" style="margin-top: 30px;">
-                <button type="submit" style="background-color: #dbe060; border: none; color: #333; font-weight: 600; padding: 12px 40px; font-size: 1.1rem; border-radius: 0; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s;">
-                    CONTACTANOS
-                </button>
-            </div>
-        </form>
-    </div>
-</section>
+          </section>
+          
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -436,8 +435,7 @@
                     </div>    
             </div>
             </div>
-        </footer>
-        <!-- Portfolio Modals-->
+        </footer>        <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
